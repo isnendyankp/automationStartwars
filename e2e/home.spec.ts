@@ -9,7 +9,7 @@ test('home page has navbar with Test Page link', async ({ page }) => {
   await expect(navbar).toBeVisible();
 
   // Check if the Test Page link exists and has correct text
-  const testPageLink = await page.locator('nav a');
+  const testPageLink = await page.locator('nav a:has-text("Test Page")');
   await expect(testPageLink).toBeVisible();
   await expect(testPageLink).toHaveText('Test Page');
 
